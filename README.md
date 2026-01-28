@@ -1,52 +1,152 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌤️ Weather App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A beautiful, responsive weather forecast application built with **Laravel 12** and **Vite**. Get real-time weather information with an elegant, modern UI.
 
-## About Laravel
+## 📸 Screenshots
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> Add screenshots here to show off your beautiful UI!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**To add screenshots:**
+1. Take a screenshot of your weather app running at `http://localhost:8001`
+2. Save it as `screenshot-desktop.png` and `screenshot-mobile.png`
+3. Create a `screenshots/` folder in your project
+4. Upload them to your GitHub repo
+5. Then use these lines to display them:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```markdown
+### Desktop View
+![Weather App Desktop](screenshots/screenshot-desktop.png)
 
-## Learning Laravel
+### Mobile View
+![Weather App Mobile](screenshots/screenshot-mobile.png)
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ✨ Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 🔍 **Search Cities** - Find weather for any city worldwide
+- 🌡️ **Temperature Units** - Toggle between Celsius and Fahrenheit
+- 📊 **Detailed Metrics** - View humidity, wind speed, pressure, visibility, and more
+- 📱 **Responsive Design** - Beautiful on desktop, tablet, and mobile
+- 🎨 **Modern UI** - Gradient design with smooth animations
+- ⚡ **Fast & Lightweight** - Built with vanilla JavaScript, no heavy frameworks
+- 🔌 **REST API** - Weather API endpoints for integration
 
-## Laravel Sponsors
+## 🛠️ Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Backend:** Laravel 12
+- **Frontend:** Blade Templates, Vanilla JavaScript
+- **Build Tool:** Vite with laravel-vite-plugin
+- **Styling:** Custom CSS3 with animations
+- **Package Manager:** Composer, NPM
 
-### Premium Partners
+## 🚀 Quick Start
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Requirements
+- PHP 8.2+
+- Node.js 18+
+- Composer
+- NPM
 
-## Contributing
+### Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Clone the repository
+git clone https://github.com/Maurice556/weather-app.git
+cd weather-app
 
-## Code of Conduct
+# Install PHP dependencies
+composer install
+
+# Install Node dependencies
+npm install
+
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Build assets
+npm run build
+
+# Start the development server
+php artisan serve --port=8001
+```
+
+Then visit: **http://localhost:8001**
+
+## 📖 Documentation
+
+- [Setup Guide](./SETUP_GUIDE.md) - Detailed installation instructions
+- [Design Guide](./DESIGN_GUIDE.md) - UI/UX design documentation
+- [Implementation Summary](./IMPLEMENTATION_SUMMARY.md) - Project structure overview
+
+## 🎯 Project Structure
+
+```
+weather-app/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── WeatherController.php       # Main weather logic
+│   │   └── Api/WeatherApiController.php # REST API endpoints
+│   └── Models/
+├── resources/
+│   ├── views/
+│   │   └── weather.blade.php           # Main UI template
+│   ├── css/
+│   │   └── weather.css                 # Custom styling
+│   └── js/
+│       └── weather.js                  # Frontend interactivity
+├── routes/
+│   ├── web.php                         # Web routes
+│   └── api.php                         # API routes
+└── package.json                        # NPM dependencies
+```
+
+## 🌐 API Endpoints
+
+### Get Weather for a City
+```bash
+GET /api/weather?city=London&unit=metric
+```
+
+### Get Weather for Multiple Cities
+```bash
+POST /api/weather/multiple
+{
+  "cities": ["London", "New York", "Tokyo"],
+  "unit": "metric"
+}
+```
+
+## 🎨 Design Highlights
+
+- **Gradient Background:** Beautiful purple-to-violet gradient
+- **Glassmorphism Cards:** Modern semi-transparent weather detail cards
+- **Smooth Animations:** Slide-in animations and hover effects
+- **Mobile-First:** Responsive layout that works on all devices
+- **Accessible:** Proper form labels and semantic HTML
+
+## 💡 Future Enhancements
+
+- [ ] 5-day forecast
+- [ ] Weather alerts
+- [ ] Saved favorite cities
+- [ ] Dark mode toggle
+- [ ] Real OpenWeatherMap API integration
+- [ ] Weather history charts
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 👨‍💻 Author
+
+**Maurice556** - [GitHub Profile](https://github.com/Maurice556)
+
+---
+
+**⭐ If you find this helpful, please star it on GitHub!**
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
